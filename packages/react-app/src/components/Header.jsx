@@ -7,7 +7,7 @@ export default function Header({ link, title, subTitle }) {
   return (
   <a href={link} rel="noopener noreferrer">
       <PageHeader title={title} subTitle={subTitle} style={{ cursor: "pointer" }} />
-    </a>
+  </a>
   );
 }
 
