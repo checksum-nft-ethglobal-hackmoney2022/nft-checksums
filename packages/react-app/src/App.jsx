@@ -29,7 +29,7 @@ import externalContracts from "./contracts/external_contracts";
 // contracts
 import deployedContracts from "./contracts/hardhat_contracts.json";
 import { Transactor, Web3ModalSetup } from "./helpers";
-import { Home, ExampleUI, Hints, Subgraph, Uploads } from "./views";
+import { Home, ExampleUI, Hints, Subgraph, Uploads, Verify } from "./views";
 import { useStaticJsonRPC } from "./hooks";
 
 const { ethers } = require("ethers");
@@ -259,6 +259,9 @@ function App(props) {
         <Menu.Item key="/">
           <Link to="/">Upload</Link>
         </Menu.Item>
+        <Menu.Item key="/verify">
+          <Link to="/verify">Verify</Link>
+        </Menu.Item>
         <Menu.Item key="/home">
           <Link to="/home">App Home</Link>
         </Menu.Item>
@@ -282,6 +285,9 @@ function App(props) {
       <Switch>
         <Route exact path="/">
           <Uploads address={address}/>
+        </Route>
+        <Route path="/verify">
+          <Verify address={address}/>
         </Route>
         <Route path="/home">
           {/* pass in any web3 props to this Home component. For example, yourLocalBalance */}
