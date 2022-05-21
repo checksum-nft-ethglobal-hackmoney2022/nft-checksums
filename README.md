@@ -1,4 +1,4 @@
-# 🏗 Scaffold-ETH
+#NFT Checksum powered by 🏗 Scaffold-ETH
 
 > everything you need to build on Ethereum! 🚀
 
