@@ -47,7 +47,7 @@ function Uploads({
     }
     
   }
-  ,[address, fileString])
+  ,[address, fileName])
 
   return (
     <div style={{display:"flex", flexDirection:"row", height:"50vh"}}>
