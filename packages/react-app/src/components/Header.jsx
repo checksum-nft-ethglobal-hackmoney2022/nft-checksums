@@ -5,14 +5,14 @@ import React from "react";
 
 export default function Header({ link, title, subTitle }) {
   return (
-    <a href={link} target="_blank" rel="noopener noreferrer">
+  <a href={link} rel="noopener noreferrer">
       <PageHeader title={title} subTitle={subTitle} style={{ cursor: "pointer" }} />
     </a>
   );
 }
 
 Header.defaultProps = {
-  link: "https://github.com/austintgriffith/scaffold-eth",
-  title: "🏗 scaffold-eth",
-  subTitle: "forkable Ethereum dev stack focused on fast product iteration",
+  link: "/",
+  title: "NFT Checksum",
+  subTitle: "Create NFT based on your file hash",
 };

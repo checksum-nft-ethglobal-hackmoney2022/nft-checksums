@@ -90,7 +90,7 @@ export default function Account({
   const display = minimized ? (
     ""
   ) : (
-    <span>
+    <span style={{display:"flex", flexDirection:"row"}}>
       {web3Modal && web3Modal.cachedProvider ? (
         <>
           {address && <Address address={address} ensProvider={mainnetProvider} blockExplorer={blockExplorer} />}
@@ -134,7 +134,7 @@ export default function Account({
   );
 
   return (
-    <div>
+    <div style={{display:"flex", flexDirection:"row"}}>
       {display}
       {modalButtons}
     </div>
