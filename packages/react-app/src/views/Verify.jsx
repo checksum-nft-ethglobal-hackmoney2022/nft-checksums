@@ -1,4 +1,4 @@
-import { Upload, message, Button } from 'antd';
+import { Upload, message, Button, Divider} from 'antd';
 import { useState, useEffect} from 'react';
 import sjcl from 'sjcl'
 const { Dragger } = Upload;
@@ -47,7 +47,7 @@ function Verify({
     }
     
   }
-  ,[address, fileString])
+  ,[address, fileName])
 
   return (
     <div style={{display:"flex", flexDirection:"row", height:"50vh"}}>
@@ -57,17 +57,19 @@ function Verify({
             {(fileName === "") ? <p>Drag and drop a file here you want to verify</p> : <p>{fileName + " Uploaded"}</p>}
         </Dragger>
         <div style={{display:"flex", flexDirection:"column", height:"100%", width:"50vw"}}>
-            <div style={{height:"25vh"}}>
+            <div>
               {(address === undefined) ? <h4>Step 2</h4> : <h4>Step 2: Completed</h4>}
               {(address === undefined) ? <p>Click on top right button to connect to your wallet</p> : 
               <p>{"Address: " + address.substring(0, 15) + "..."}</p>}
+              <Divider/>
             </div>
             <div style={{height:"25vh"}}>
               <h4>Step 3</h4>
               <div style={{display:"flex", flexDirection:"row", height:"100%"}}>
-                <div style={{width:"25vw"}}>
+                <div style={{width:"25vw", height:"100%", display:"flex", alignItems:"center", 
+                justifyContent:"center", flexDirection:"column"}}>
                   <h5>Hash</h5>
-                  <p style={{wordWrap:"break-word", padding:10}}>{fileHash}</p>
+                  <p style={{wordWrap:"break-word", padding:10, width:"100%"}}>{fileHash}</p>
                 </div>
                 <div style={{width:"25vw", height:"100%", display:"flex", alignItems:"center", justifyContent:"center"}}>
                   {(fileHash !== "None") ?

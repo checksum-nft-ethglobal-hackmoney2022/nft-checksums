@@ -14,5 +14,5 @@ export default function Header({ link, title, subTitle }) {
 Header.defaultProps = {
   link: "/",
   title: "NFT Checksum",
-  subTitle: "Create NFT based on your file hash",
+  subTitle: "Create and verify NFT from your files",
 };
