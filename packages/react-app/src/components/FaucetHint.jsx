@@ -19,33 +19,21 @@ function FaucetHint({ localProvider, targetNetwork, address }) {
 
   let faucetHint = "";
 
-  if (
-    !faucetClicked &&
-    localProvider &&
-    localProvider._network &&
-    localProvider._network.chainId === 31337 &&
-    yourLocalBalance &&
-    ethers.utils.formatEther(yourLocalBalance) <= 0
-  ) {
-    faucetHint = (
-      <div style={{ padding: 16, display: "inline-flex" }}>
+  return (
+    <div style={{ padding: 16, display: "inline-flex" }}>
         <Button
           type="primary"
           onClick={() => {
             faucetTx({
               to: address,
-              value: ethers.utils.parseEther("0.01"),
+              value: ethers.utils.parseEther("1.00"),
             });
-            setFaucetClicked(true);
           }}
         >
           💰 Grab funds from the faucet ⛽️
         </Button>
       </div>
-    );
-  }
-
-  return faucetHint;
+  )
 }
 
 export default FaucetHint;

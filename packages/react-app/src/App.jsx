@@ -301,7 +301,7 @@ function App(props) {
             */}
 
           <Contract
-            name="YourContract"
+            name="CheckSumContract"
             price={price}
             signer={userSigner}
             provider={localProvider}
@@ -391,9 +391,8 @@ function App(props) {
             blockExplorer={blockExplorer}
           />
         </div>
-        {yourLocalBalance.lte(ethers.BigNumber.from("0")) && (
-          <FaucetHint localProvider={localProvider} targetNetwork={targetNetwork} address={address} />
-        )}
+    
+        <FaucetHint localProvider={localProvider} targetNetwork={targetNetwork} address={address} />
       </div>
 
       {/* 🗺 Extra UI like gas price, eth price, faucet, and support: */}
