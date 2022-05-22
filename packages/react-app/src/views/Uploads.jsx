@@ -70,7 +70,7 @@ function Uploads({
       message.success(`Push to blockchain successfully.`);
     }catch(e){
       message.error('Push to blockchain failed');
-      setOutput(JSON.stringify(e.body))
+      setOutput(JSON.stringify(e))
     }
   }
 

@@ -71,7 +71,7 @@ function Verify({
       message.success(`Pulled from blockchain successfully.`);
     }catch(e){
       message.error(`Pulled from blockchain failed!`);
-      setOutput(JSON.stringify(e.body))
+      setOutput(JSON.stringify(e))
     }
   }
 

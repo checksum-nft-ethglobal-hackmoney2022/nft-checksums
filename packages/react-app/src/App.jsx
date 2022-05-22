@@ -58,7 +58,7 @@ const initialNetwork = NETWORKS.localhost; // <------- select your target fronte
 // 😬 Sorry for all the console logging
 const DEBUG = true;
 const NETWORKCHECK = true;
-const USE_BURNER_WALLET = true; // toggle burner wallet feature
+const USE_BURNER_WALLET = false; // toggle burner wallet feature
 const USE_NETWORK_SELECTOR = false;
 
 const web3Modal = Web3ModalSetup();
@@ -123,7 +123,7 @@ function App(props) {
       }
     }
     getAddress();
-  }, [userSigner]);
+  }, [injectedProvider, localProvider, USE_BURNER_WALLET]);
 
   // You can warn the user if you would like them to be on a specific network
   const localChainId = localProvider && localProvider._network && localProvider._network.chainId;
@@ -247,14 +247,6 @@ function App(props) {
   return (
     <div className="App">
       <Header />
-      {/* <NetworkDisplay
-        NETWORKCHECK={NETWORKCHECK}
-        localChainId={localChainId}
-        selectedChainId={selectedChainId}
-        targetNetwork={targetNetwork}
-        logoutOfWeb3Modal={logoutOfWeb3Modal}
-        USE_NETWORK_SELECTOR={USE_NETWORK_SELECTOR}
-      /> */}
       <Menu style={{ textAlign: "center" }} selectedKeys={[location.pathname]} mode="horizontal">
         <Menu.Item key="/">
           <Link to="/">Upload</Link>
@@ -298,7 +290,7 @@ function App(props) {
             contractConfig={contractConfig}
             provider={localProvider}/>
         </Route>
-        {/*<Route path="/home">
+        {/* <Route path="/home">
           <Home yourLocalBalance={yourLocalBalance} readContracts={readContracts} />
         </Route>
          <Route exact path="/debug">
