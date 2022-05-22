@@ -7,19 +7,16 @@ import "hardhat/console.sol";
 
 contract CheckSumContract {
 
-  event SetAdd(address sender, string checksum);
-
   mapping(string => address) public hashset;
 
   constructor() payable {}
 
   function add(string memory checksum) public {
     hashset[checksum] = msg.sender;
-    emit SetAdd(msg.sender, checksum);
   }
 
-  function verify(string memory checksum) public view returns (bool) {
-    return hashset[checksum] == msg.sender;
+  function verify(string memory checksum) public view returns (address) {
+    return hashset[checksum];
   }
 
   // to support receiving ETH by default

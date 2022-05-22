@@ -101,7 +101,8 @@ export default function Contract({
 
       // If there are inputs, display a form to allow users to provide these
       return (
-        <FunctionForm
+        <div>
+          <FunctionForm
           key={"FF" + contractFuncInfo[0]}
           contractFunction={contractFunc}
           functionInfo={contractFuncInfo[1]}
@@ -109,6 +110,8 @@ export default function Contract({
           gasPrice={gasPrice}
           triggerRefresh={triggerRefresh}
         />
+        </div>
+        
       );
     }
     return null;
